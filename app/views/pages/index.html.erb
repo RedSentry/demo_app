@@ -1,0 +1,31 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Published at</th>
+    <th>Is published</th>
+    <th>Page no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.name %></td>
+    <td><%= page.description %></td>
+    <td><%= page.published_at %></td>
+    <td><%= page.is_published %></td>
+    <td><%= page.page_no %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>
